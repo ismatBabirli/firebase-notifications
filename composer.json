@@ -1,0 +1,21 @@
+{
+  "name": "ismat/notifications",
+  "description": "Package for sent firebase notification different configuration",
+  "type": "library",
+  "license": "MIT",
+  "autoload": {
+    "psr-4": {
+      "Ismat\\Notifications\\": "src/"
+    }
+  },
+  "authors": [
+    {
+      "name": "Ismat Babirli",
+      "email": "i.babirli@outlook.com"
+    }
+  ],
+  "minimum-stability": "dev",
+  "require": {
+    "kawankoding/laravel-fcm": "^0.2.0"
+  }
+}
