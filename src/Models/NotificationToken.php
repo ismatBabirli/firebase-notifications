@@ -4,9 +4,9 @@ namespace Ismat\Notifications\Models;
 
 use App\Models\Application;
 use App\Models\User;
-use App\Traits\UsesUuid;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Support\Str;
 
 /**
  * @property string $id
@@ -23,7 +23,14 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
  */
 class NotificationToken extends Model
 {
-    use UsesUuid;
+
+    protected static function boot()
+    {
+        parent::boot();
+        static::creating(function ($model) {
+            $model->id = (string) Str::uuid();
+        });
+    }
 
     /**
      * The "type" of the auto-incrementing ID.
